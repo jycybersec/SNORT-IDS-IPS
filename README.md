@@ -1,8 +1,8 @@
 # SNORT-IDS/IPS
 
-Security Onion VM "192.168.48.140"
-Kali Linux VM "192.168.48.129"
-Metasploitable Linux VM "192.168.48.130"
+  - Security Onion VM "192.168.48.140"
+  - Kali Linux VM "192.168.48.129"
+  - Metasploitable Linux VM "192.168.48.130"
 
 ## Process
  - Snort rules can be manually created, by modifying the `local.rules` file in the `/etc/nsm/rules` directory.
