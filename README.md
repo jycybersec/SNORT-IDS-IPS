@@ -10,6 +10,10 @@
  - After the `local.rules` file is modified and saved, the rules will need to be updated by running the following command: `sudo rule-update`.
  - If any errors are encountered, use the `sudo sostat` command, to view Security Onion's services status.
 
+## local.rules
+
+![image](https://github.com/user-attachments/assets/e740e261-740f-44b0-a4d8-bf0ac46a0698)
+
 
 ## ICMP Echo Reply Rule
 
@@ -103,9 +107,6 @@
 ![image](https://github.com/user-attachments/assets/32b1400e-f9f8-426f-a1b6-d5a25905a20a)
 
 
-## local.rules File
-
-![image](https://github.com/user-attachments/assets/e740e261-740f-44b0-a4d8-bf0ac46a0698)
 
 
 
