@@ -5,16 +5,31 @@ Kali Linux VM "192.168.48.129"
 Metasploitable Linux VM "192.168.48.130"
 
 ## Process
-    - Snort rules can be manually created, by modifying the 'local.rules' file in the '/etc/nsm/rules' directory.
-    - After the 'local.rules' file is modified and saved, the rules will need to be updated by running the following command: 'sudo rule-update'.
-    - If any errors are encountered, use the 'sudo sostat' command, to view Security Onions service status.
+ - Snort rules can be manually created, by modifying the 'local.rules' file in the '/etc/nsm/rules' directory.
+ - After the 'local.rules' file is modified and saved, the rules will need to be updated by running the following command: 'sudo rule-update'.
+  - If any errors are encountered, use the 'sudo sostat' command, to view Security Onions service status.
+
+
+## ICMP Echo Reply Rule
+
+- Snort Rule
+  ```snort
+  alert icmp any any -> any any (itype:0; msg:"ICMP Echo Reply Detected"; content: "Jack Yorgason" classtype:misc-attack; sid:9000011; rev:1;)
+- hping3 Command
+
+![image](https://github.com/user-attachments/assets/abdf9ee4-ba45-47dc-b679-6fec389049be)
+
+  
+- Sguil Alert
+
+![image](https://github.com/user-attachments/assets/d202c9d7-881f-4248-b759-4bf993e2f0b3)
 
 
 ## TCP FIN Scan Rule
 
 - Snort Rule
   ```snort
-
+    alert tcp any any -> any any (flags:F; msg:"TCP FIN Scan Detected"; classtype:misc-attack; sid:9000050; rev:1;)
 - hping3 Command
 
 ![image](https://github.com/user-attachments/assets/a1d02900-7643-4f64-b32e-af41a47b6c21)
@@ -28,7 +43,8 @@ Metasploitable Linux VM "192.168.48.130"
 ## TCP XMAS Scan Rule
 
 - Snort Rule
-  ""
+  ```snort
+    alert tcp any any -> any any (flags:UPF; msg:"Possible XMAS Scan Detected"; classtype:misc-attack; sid:9000010; rev:1;)
 - hping3 Command
 
 ![image](https://github.com/user-attachments/assets/960184b6-dfe7-491f-a1a5-1f171b0f2616)
@@ -42,7 +58,8 @@ Metasploitable Linux VM "192.168.48.130"
 ## TCP SYN Scan Rule
 
 - Snort Rule
-  ""
+  ```snort
+  alert tcp any any -> any any (flags:S; msg:"TCP SYN Scan Detected"; classtype:misc-attack; sid:9000050; rev:1;)
 - hping3 Command
 
 ![image](https://github.com/user-attachments/assets/c68075f0-ea74-4ad9-8e99-eec967d5d0c3)
@@ -56,7 +73,8 @@ Metasploitable Linux VM "192.168.48.130"
 ## TCP Null Scan Rule
 
 - Snort Rule
-  ""
+  ```snort
+  drop tcp any any -> any any (flags:0; msg:"Possible Null Scan Blocked"; classtype:misc-attack; sid:9000070; rev:1;)
 - hping3 Command
 
 ![image](https://github.com/user-attachments/assets/5546b732-9cfd-4dd7-a077-57cf1d2b5151)
@@ -67,30 +85,24 @@ Metasploitable Linux VM "192.168.48.130"
 ![image](https://github.com/user-attachments/assets/4d75cd0b-f23e-46cb-9b41-5458f9d99a27)
 
 
-## ICMP Echo Reply Rule
-
-- Snort Rule
-  ""
-- hping3 Command
-
-![image](https://github.com/user-attachments/assets/abdf9ee4-ba45-47dc-b679-6fec389049be)
-
-  
-- Sguil Alert
-
-![image](https://github.com/user-attachments/assets/d202c9d7-881f-4248-b759-4bf993e2f0b3)
-
-
 ## Telnet Port Traffic Rule
 
 - Snort Rule
-  ""
+  ```snort
+  alert tcp any any -> any 23 (msg:"Telnet Traffic Detected"; classtype:misc-attack; sid:9000007; rev:1;)
 - Telnet Command
 
-![image](https://github.com/user-attachments/assets/61df366e-49ea-4484-9ad4-0d46bf3b72c7)
+![image](https://github.com/user-attachments/assets/b04f893e-dcad-4986-bb4b-70d6e554e2d6)
 
   
 - Sguil Alert
 
-![image](https://github.com/user-attachments/assets/f0a945d1-6234-4d7a-a229-d638dc7235e6)
+![image](https://github.com/user-attachments/assets/32b1400e-f9f8-426f-a1b6-d5a25905a20a)
+
+
+## local.rules File
+
+![image](https://github.com/user-attachments/assets/e740e261-740f-44b0-a4d8-bf0ac46a0698)
+
+
 
