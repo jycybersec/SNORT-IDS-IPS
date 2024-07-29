@@ -57,7 +57,7 @@
 ![image](https://github.com/user-attachments/assets/960184b6-dfe7-491f-a1a5-1f171b0f2616)
 
   
-- Sguert Alert
+- Squert Alert
 
 ![image](https://github.com/user-attachments/assets/c1bd2f1e-d3b6-4a97-8044-86a3fbba72a0)
 
