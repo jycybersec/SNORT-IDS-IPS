@@ -37,6 +37,8 @@
 
 ## TCP FIN Scan Rule
 
+- **Description**: This rule identifies TCP FIN scan attempts, which are used by attackers to probe for open ports on a target system. The rule triggers an alert when a TCP packet with the FIN flag set is detected. The custom message “TCP FIN Scan Detected” helps in identifying the nature of the alert.
+  
 - **Snort Rule**
   ```snort
     alert tcp any any -> any any (flags:F; msg:"TCP FIN Scan Detected"; classtype:misc-attack; sid:9000050; rev:1;)
@@ -52,6 +54,8 @@
 
 
 ## TCP XMAS Scan Rule
+
+- **Description**: This rule detects TCP XMAS scans, a type of port scan where the FIN, PSH, and URG flags are set in the TCP header. The rule triggers an alert with the message “Possible XMAS Scan Detected” when such packets are observed, indicating a potential reconnaissance attempt by an attacker.
 
 - **Snort Rule**
   ```snort
@@ -69,6 +73,8 @@
 
 ## TCP SYN Scan Rule
 
+- **Description**: This rule is designed to detect TCP SYN scans, which are used to identify open ports on a target system by sending SYN packets. The rule triggers an alert with the message “TCP SYN Scan Detected” when a SYN packet is detected, indicating a possible scanning activity.
+
 - **Snort Rule**
   ```snort
   alert tcp any any -> any any (flags:S; msg:"TCP SYN Scan Detected"; classtype:misc-attack; sid:9000050; rev:1;)
@@ -85,6 +91,8 @@
 
 ## TCP Null Scan Rule
 
+- **Description**: This rule detects TCP Null scans, where no flags are set in the TCP header. Such scans are used to probe for open ports by exploiting differences in how systems respond to these packets. The rule drops the packet and logs the event with the message “Possible Null Scan Blocked,” indicating a potential threat.
+
 - **Snort Rule**
   ```snort
   drop tcp any any -> any any (flags:0; msg:"Possible Null Scan Blocked"; classtype:misc-attack; sid:9000070; rev:1;)
@@ -100,6 +108,8 @@
 
 
 ## Telnet Port Traffic Rule
+
+- **Description**: This rule identifies traffic on the Telnet port (port 23), which is often used for remote administration but is considered insecure due to the lack of encryption. The rule triggers an alert with the message “Telnet Traffic Detected” when traffic is detected on this port, highlighting potential security risks associated with Telnet usage.
 
 - **Snort Rule**
   ```snort
