@@ -17,7 +17,7 @@
 
 
 ## ICMP Echo Reply Rule
-
+- This rule detects ICMP Echo Reply messages (commonly known as ping replies), containing "Jack Yorgason" (my name). It triggers an alert when such a message is detected, indicating that a device has responded to a ping request. The rule includes a custom message “ICMP Echo Reply Detected” and uses the itype:0 option to specify the ICMP type for Echo Reply.
 - Snort Rule
   ```snort
   alert icmp any any -> any any (itype:0; msg:"ICMP Echo Reply Detected"; content: "Jack Yorgason" classtype:misc-attack; sid:9000011; rev:1;)
