@@ -91,7 +91,7 @@
 
 ## TCP Null Scan Rule
 
-- **Description**: This rule detects TCP Null scans, where no flags are set in the TCP header. Such scans are used to probe for open ports by exploiting differences in how systems respond to these packets. The rule drops the packet and logs the event with the message “Possible Null Scan Blocked,” indicating a potential threat.
+- **Description**: This rule identifies TCP Null scans, characterized by the absence of flags in the TCP header. These scans are employed to detect open ports by leveraging variations in system responses to such packets. The rule blocks the packet and logs the event with the message “Possible Null Scan Blocked,” signaling a potential threat.
 
 - **Snort Rule**
   ```snort
