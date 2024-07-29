@@ -1,6 +1,6 @@
 # Snort IDS/IPS Custom Rules
 
-## Virtual Machines 
+## Virtual Machine Roles and Responsibilities
 - **Security Onion VM "192.168.48.140"**
    - Operating system with Network Intrusion Detection System and Log Monitoring capabilities, acting as an interim by observing network traffic, hosting Snort, Squil, and Squert.
 - **Kali Linux VM "192.168.48.129"**
