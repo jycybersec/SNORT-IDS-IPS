@@ -1,4 +1,4 @@
-# SNORT IDS/IPS Custom Rules
+# Snort IDS/IPS Custom Rules
 
 ## Machines 
 - **Security Onion VM "192.168.48.140"**
