@@ -8,16 +8,35 @@
 - **Metasploitable Linux VM "192.168.48.130"**
     - Vulnerable Linux operating system acting as the recipient of ICMP and TCP packets. This machine also hosts vulnerable services such as Telnet.
 
-
 ## Process
  - Snort rules can be manually created, by modifying the `local.rules` file in the `/etc/nsm/rules` directory.
  - After the `local.rules` file is modified and saved, the rules will need to be updated by running the following command: `sudo rule-update`.
  - If any errors are encountered, use the `sudo sostat` command, to view Security Onion's services status.
-
-## local.rules
+ - local.rules file:
 
 ![image](https://github.com/user-attachments/assets/e740e261-740f-44b0-a4d8-bf0ac46a0698)
 
+## Snort Rule Parameters
+
+- **Action**: This specifies what Snort should do when the rule is triggered. Common actions include alert (generate an alert), drop (drop the packet), and log (log the packet).
+  
+- **Protocol**: This defines the type of network traffic the rule applies to, such as tcp, udp, or icmp.
+
+- **Source/Destination**: These parameters specify the source and destination IP addresses and ports. The format is source IP source port -> destination IP destination port. Using any means the rule applies to any IP address or port.
+  
+- **Flags**: This parameter is used in TCP rules to specify which TCP flags must be set in the packet for the rule to trigger. Examples include S for SYN, F for FIN, and 0 for no flags.
+
+- **ICMP Type**: For ICMP rules, this specifies the type of ICMP message, such as itype:8 for Echo Request or itype:0 for Echo Reply.
+
+- **Message**: The msg parameter defines the message that will be logged when the rule is triggered. This helps identify the nature of the alert.
+
+- **Content**: This parameter specifies a string that must be present in the packet payload for the rule to trigger. It is often used to detect specific patterns or keywords.
+
+- **Classtype**: This classifies the rule into a predefined category, such as misc-attack or network-scan, which helps in organizing and prioritizing alerts.
+
+- **SID**: The Snort ID (SID) is a unique identifier for the rule. It helps in managing and referencing specific rules.
+
+- **Revision**: The rev parameter indicates the revision number of the rule. It is used to track changes and updates to the rule over time.
 
 ## ICMP Echo Reply Rule
 - **Description**: This rule detects ICMP Echo Reply messages (commonly known as ping replies), containing "Jack Yorgason" (my name). It triggers an alert when such a message is detected, indicating that a device has responded to a ping request. The rule includes a custom message “ICMP Echo Reply Detected” and uses the itype:0 option to specify the ICMP type for Echo Reply.
