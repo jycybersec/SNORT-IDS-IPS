@@ -2,8 +2,11 @@
 
 ## Machines 
     - Security Onion VM "192.168.48.140"
+        - Operating system with Network Intrusion Detection System and Log Monitoring capabilities, acting as an interim by observing network traffic, hosting Snort, Squil, and Squert.
     - Kali Linux VM "192.168.48.129"
+        - Offensive Security operating system, acting as a threat actor by crafting packets using hping3 and establishing a connection via Telnet.
     - Metasploitable Linux VM "192.168.48.130"
+        - Vulnerable Linux operating system acting as the recipient of ICMP and TCP packets. This machine also hosts vulnerable services such as Telnet.
 
 
 ## Process
