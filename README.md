@@ -1,4 +1,4 @@
-# SNORT-IDS/IPS
+# SNORT-IDS/IPS-Custom Rules
  
     - Security Onion VM "192.168.48.140"
     - Kali Linux VM "192.168.48.129"
