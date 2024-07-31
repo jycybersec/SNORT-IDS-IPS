@@ -19,6 +19,8 @@
 
 ![image](https://github.com/user-attachments/assets/e740e261-740f-44b0-a4d8-bf0ac46a0698)
 
+ - When the rules are triggered, an alert is created in both `Sguil` and `Squert` (included in SO OS)
+
 ## Snort Rule Parameters
 
 - **Action**: This specifies what Snort should do when the rule is triggered. Common actions include alert (generate an alert), drop (drop the packet), and log (log the packet).
